@@ -1,3 +1,6 @@
-x=input("What's your name ")
-x = x.strip()
-print(f"My name is, {x}")
+import requests
+
+response = requests.get('https://api.github.com/users/octocat')
+data = response.json()
+print(data['login'])
+print(data['name'])
